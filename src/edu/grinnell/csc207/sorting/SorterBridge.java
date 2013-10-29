@@ -6,6 +6,8 @@ import java.util.Comparator;
 /**
  * A bridge between sorters.  If you implement one of the two array-based
  * sorting routines, this automatically gives you the other.
+ *
+ * @author Samuel A. Rebelsky
  */
 public class SorterBridge<T> implements Sorter<T> {
 

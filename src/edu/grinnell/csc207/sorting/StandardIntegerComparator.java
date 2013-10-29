@@ -6,6 +6,8 @@ import java.util.Comparator;
  * A standard comparator for integers.  Note that this is a singleton
  * class - you only ever need one copy of it.  Obtain the one copy
  * with StandardIntegerComparator.comparator.
+ *
+ * @author Samuel A. Rebelsky
  */
 public class StandardIntegerComparator implements Comparator<Integer> {
     /**
@@ -26,12 +28,6 @@ public class StandardIntegerComparator implements Comparator<Integer> {
          // The "clever" way to implement this is 
          //   return x-y;
          // Unfortunately, that can lead to overflow or underflow.
-         if (x < y) { 
-             return -1;
-         } else if (x == y) {
-             return 0;
-         } else {
-             return 1;
-         } // if x > y
+         return Integer.compare(x,y);
     } // compare(Integer, Integer)
 } // StandardIntegerComparator

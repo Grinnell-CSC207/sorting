@@ -5,6 +5,8 @@ import java.util.Comparator;
 
 /**
  * Sort using insertion sort.
+ *
+ * @author Samuel A. Rebelsky
  */
 public class InsertionSorter<T> extends SorterBridge<T> {
    /**

@@ -2,6 +2,8 @@ package edu.grinnell.csc207.sorting;
 
 /**
  * A quick experiment with the built-in sorter.
+ *
+ * @author Samuel A. Rebelsky
  */
 public class BuiltinSortExpt {
 

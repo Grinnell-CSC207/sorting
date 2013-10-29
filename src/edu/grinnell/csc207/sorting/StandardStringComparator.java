@@ -6,6 +6,8 @@ import java.util.Comparator;
  * A standard comparator for strings.  Note that this is a singleton
  * class - you only ever need one copy of it.  Obtain the one copy
  * with StandardStringComparator.comparator.
+ *
+ * @author Samuel A. Rebelsky
  */
 public class StandardStringComparator implements Comparator<String> {
     /**
