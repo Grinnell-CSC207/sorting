@@ -28,6 +28,24 @@ class Utils {
     // | Static Methods |
     // +----------------+
 
+    /** 
+     * Merge the values in arrays a1 and a2 into a new array.
+     * @return
+     *    merged, an array
+     *
+     * @pre
+     *    sorted(a1, order)
+     * @pre
+     *    sorted(a2, order)
+     * @post
+     *    sorted(merged, order).
+     * @post
+     *    merged is a permutation of the concatenation of a1 and a2.
+     */
+    public static <T> T[] merge(Comparator<T> order, T[] a1, T[] a2) {
+         return merge(order, a1, 0, a1.length, a2, 0, a2.length);
+    } // merge(Comparator<T>, T[], T[])
+
     /**
      * Merge the values in subarrays of a1 and a2 into a new array.
      *
@@ -41,7 +59,8 @@ class Utils {
      * @post
      *    sorted(merged, order).
      * @post
-     *    merged is a permutation of the given subarrays of a1 and a2.
+     *    merged is a permutation of the concatenation of the given 
+     *    subarrays of a1 and a2.
      */
     public static <T> T[] merge(Comparator<T> order, T[] a1, int lb1, 
             int ub1, T[] a2, int lb2, int ub2) {
