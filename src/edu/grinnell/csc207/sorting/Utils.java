@@ -82,7 +82,10 @@ class Utils {
      * Generate a "random" sorted array of integers of size n.
      */
     public static Integer[] randomSortedInts(int n) {
-        Integer[] values = new Integer[n];
+        if (n == 0) {
+            return new Integer[0];
+        }
+	Integer[] values = new Integer[n];
         // Start with a negative number so that we have a mix
         values[0] = generator.nextInt(10) - n;
         // Add remaining values.  We use a random increment between
