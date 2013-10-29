@@ -9,6 +9,9 @@ import java.util.Random;
 /**
  * A variety of utilities for working with sorting algorithms.  Most
  * are designed to help with testing or experiments.
+ *
+ * @author Samuel A. Rebelsky
+ * @author Your Name Here
  */
 class Utils {
 
@@ -24,6 +27,27 @@ class Utils {
     // +----------------+--------------------------------------------------
     // | Static Methods |
     // +----------------+
+
+    /**
+     * Merge the values in subarrays of a1 and a2 into a new array.
+     *
+     * @return
+     *    merged, an array
+     *
+     * @pre
+     *    sorted(a1, order, lb1, ub1).
+     * @pre
+     *    sorted(a2, order, lb2, ub2).
+     * @post
+     *    sorted(merged, order).
+     * @post
+     *    merged is a permutation of the given subarrays of a1 and a2.
+     */
+    public static <T> T[] merge(Comparator<T> order, T[] a1, int lb1, 
+            int ub1, T[] a2, int lb2, int ub2) {
+        // STUB
+        return null;
+    } // merge(Comparator<T>, T[], int, int, T[], int, int)
 
     /**
      * "Randomly" permute an array in place.
