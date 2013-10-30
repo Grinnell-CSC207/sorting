@@ -28,6 +28,12 @@ public class StandardIntegerComparator implements Comparator<Integer> {
          // The "clever" way to implement this is 
          //   return x-y;
          // Unfortunately, that can lead to overflow or underflow.
-         return Integer.compare(x,y);
+	
+	// I'd like to use the built-in comparison
+	//    return Integer.compare(x,y);
+	// Unfortunately, that's not supported in Java 6
+	
+	// I think this works on most platforms.
+	return x.compareTo(y);
     } // compare(Integer, Integer)
 } // StandardIntegerComparator
