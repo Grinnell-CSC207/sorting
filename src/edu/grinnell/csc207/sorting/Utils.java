@@ -159,8 +159,13 @@ class Utils {
             Sorter<T> sorter, Comparator<T> compare, T[] sorted) {
         T[] values = sorted.clone();
         permute(values);
-        T[] resorted = sorter.sort(values, compare);
+        checkSorting(pen, sorted, values, sorter.sort(values, compare));
+    } // permutationExperiment(PrintWriter, Sorter<T>, Comparator<T>
 
+    /**
+     * Check the result of sorting.
+     */
+    public static <T> void checkSorting(PrintWriter pen, T[] sorted, T[] values, T[] resorted) {
         // Print a quick prefix so that we can see whether or not the
         // sort worked.
         if (Arrays.equals(sorted,resorted)) {
@@ -172,7 +177,7 @@ class Utils {
         // Print the transformation for folks who like to look.
         pen.println("sort(" + Arrays.toString(values) + ") => ");
         pen.println("          " + Arrays.toString(resorted));
-    } // permutationExperiment
+    } // checkSorting
 
     /**
      * Run some experiments using an integer sorter.
@@ -180,6 +185,14 @@ class Utils {
     public static void iExperiments(Sorter<Integer> sorter) {
          PrintWriter pen = new PrintWriter(System.out, true);
          Integer[] vals1 = new Integer[] { 1, 2, 2, 2, 4, 5, 7, 7, 11, 13 };
+         
+         // A case that's proven problematic
+         Integer[] vals2 = new Integer[] { 1, 1, 2, 3, 4, 5, 7, 9, 11, 13, 13, 0 };
+         checkSorting(pen, 
+        	 new Integer[] { 0, 1, 1, 2, 3, 4, 5, 7, 9, 11, 13, 13 },
+        	 vals2,
+        	 sorter.sort(vals2, StandardIntegerComparator.comparator));
+        	 
          // Five random permutation experiments seems like enough
          for (int i = 0; i < 5; i++) {
              permutationExperiment(pen, sorter, 
