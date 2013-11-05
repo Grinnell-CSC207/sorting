@@ -25,14 +25,14 @@ public class Quicksorter<T> extends SorterBridge<T> {
     */
    public void qsort(T[] vals, Comparator<T> order, int lb, int ub) {
        // One element arrays are sorted.
-       if (lb >= ub) {
+       if (lb >= ub - 1) {
            return;
        } else {
            int mid = partition(vals, order, lb, ub);
-           qsort(vals, order, lb, mid-1);
+           qsort(vals, order, lb, mid);
            qsort(vals, order, mid+1, ub);
        } // More than one element
-   } // sorti(T[], Comparator<T>, int, int)
+   } // qsort(T[], Comparator<T>, int, int)
 
    /**
     * Pick a random pivot and reorganize the elements in positions 
