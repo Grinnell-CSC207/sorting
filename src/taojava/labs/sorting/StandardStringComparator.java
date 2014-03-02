@@ -9,22 +9,27 @@ import java.util.Comparator;
  *
  * @author Samuel A. Rebelsky
  */
-public class StandardStringComparator implements Comparator<String> {
-    /**
-     * The one copy.
-     */
-    public static StandardStringComparator comparator = 
-            new StandardStringComparator();
+public class StandardStringComparator
+    implements
+      Comparator<String>
+{
+  /**
+   * The one copy.
+   */
+  public static StandardStringComparator comparator =
+      new StandardStringComparator();
 
-    /**
-     * Build a new comparator.  We make this private to keep the class
-     * a singleton.
-     */
-    private StandardStringComparator() {
-    } // StandardStringComparator()
+  /**
+   * Build a new comparator.  We make this private to keep the class
+   * a singleton.
+   */
+  private StandardStringComparator()
+  {
+  } // StandardStringComparator()
 
-    @Override
-    public int compare(String x, String y) {
-         return x.compareTo(y);
-    } // compare(String, String)
+  @Override
+  public int compare(String x, String y)
+  {
+    return x.compareTo(y);
+  } // compare(String, String)
 } // StandardStringComparator
