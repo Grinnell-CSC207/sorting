@@ -1,4 +1,4 @@
-package edu.grinnell.csc207.sorting;
+package taojava.labs.sorting;
 
 /**
  * A quick experiment with the built-in sorter.

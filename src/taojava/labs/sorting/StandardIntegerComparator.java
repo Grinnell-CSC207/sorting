@@ -1,4 +1,4 @@
-package edu.grinnell.csc207.sorting;
+package taojava.labs.sorting;
 
 import java.util.Comparator;
 
