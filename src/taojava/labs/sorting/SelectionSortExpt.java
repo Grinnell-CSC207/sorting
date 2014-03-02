@@ -12,7 +12,7 @@ public class SelectionSortExpt
    */
   public static void main(String[] args)
   {
-    Utils.iExperiments(new SelectionSorter<Integer>());
-    Utils.sExperiments(new SelectionSorter<String>());
+    ExptUtils.iExperiments(new SelectionSorter<Integer>());
+    ExptUtils.sExperiments(new SelectionSorter<String>());
   } // main(String[])
 } // class SelectionSortExpt

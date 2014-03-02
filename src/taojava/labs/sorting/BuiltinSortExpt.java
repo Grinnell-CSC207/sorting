@@ -12,7 +12,7 @@ public class BuiltinSortExpt
    */
   public static void main(String[] args)
   {
-    Utils.iExperiments(new BuiltinSorter<Integer>());
-    Utils.sExperiments(new BuiltinSorter<String>());
+    ExptUtils.iExperiments(new BuiltinSorter<Integer>());
+    ExptUtils.sExperiments(new BuiltinSorter<String>());
   } // main(String[])
 } // class BuiltinSortExpt
