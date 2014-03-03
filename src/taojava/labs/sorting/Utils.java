@@ -49,10 +49,16 @@ class Utils
 
   /**
    * Merge the values in subarrays of a1 and a2 into a new array.
+   * The subarray of a1 takes on indices lb1 (inclusive) to ub1 (exclusive).
+   * The subarray of a2 takes on indices lb2 (inclusive) to ub2 (exclusive).
    *
    * @return
    *    merged, an array
    *
+   * @pre
+   *    0 <= lb1 <= ub1 <= a1.length.
+   * @pre
+   *    0 <= lb2 <= ub2 <= a2.length.
    * @pre
    *    sorted(a1, order, lb1, ub1).
    * @pre
@@ -63,11 +69,14 @@ class Utils
    *    merged is a permutation of the concatenation of the given 
    *    subarrays of a1 and a2.
    */
+  @SuppressWarnings({"unchecked"})
   public static <T> T[] merge(Comparator<T> order, T[] a1, int lb1, int ub1,
                               T[] a2, int lb2, int ub2)
   {
+    // Create the new array for the merged values.
+    T[] result = (T[]) new Object[(ub1-lb1) + (ub2-lb2)];
     // STUB
-    return null;
+    return result;
   } // merge(Comparator<T>, T[], int, int, T[], int, int)
 
   /**
