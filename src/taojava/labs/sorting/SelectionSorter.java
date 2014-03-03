@@ -19,10 +19,40 @@ public class SelectionSorter<T>
   @Override
   public T[] sorti(T[] vals, Comparator<T> order)
   {
+    // Invariant:
+    //   +-----------------+------------------+
+    //   | sorted, smaller | unsorted, larger |
+    //   +-----------------+------------------+
+    //   |                 |                  |
+    //   0                 i                 vals.length
+    // That is,
+    //   I1(i) / the left is sorted
+    //     For all j, 0 <= j < i-1, 
+    //       order.compare(vals[j], vals[j+1]) <= 0
+    //   I2(i) / left precedes right
+    //     For all j,k 0 <= j < i <= k < vals.length,
+    //       order.compare(vals[j], vals[k]) <= 0
     for (int i = 0; i < vals.length; i++)
       {
         Utils.swap(vals, i, indexOfSmallest(vals, order, i, vals.length));
+        // Analysis
+        //   I1(i+1) holds because I1(i) holds and the new element at position
+        //     i is form the unsorted subarray, and any element in the 
+        //     unsorted subarray is at least as large as the values in 
+        //     the sorted subarray
+        //   I2(i+1) holds because I2(i) held and because the new element
+        //     at position i is the smallest in the unsorted subarray.
+        // Conclusion
+        //   We can increment i and maintain the invariant
       } // for
+
+    // At this point, i = vals.length, we therefore have
+    //   +---------------------------------+
+    //   | sorted, "smaller"               |
+    //   +---------------------------------+
+    //   |                                 |
+    //   0                                 i,vals.length
+    // And the whole array is sorted.
     return vals;
   } // sorti(T[], Comparator<T>)
 
