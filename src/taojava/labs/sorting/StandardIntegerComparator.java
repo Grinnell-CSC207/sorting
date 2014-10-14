@@ -10,8 +10,7 @@ import java.util.Comparator;
  * @author Samuel A. Rebelsky
  */
 public class StandardIntegerComparator
-    implements
-      Comparator<Integer>
+    implements Comparator<Integer>
 {
   // +-------+-----------------------------------------------------------
   // | Notes |
@@ -48,7 +47,7 @@ public class StandardIntegerComparator
   using built-in comparators.
 
   Hence, our strategy is to box the values and use the compare method
-  that Integers include because the implement Comparable.
+  that Integers include because they implement Comparable.
 
   2. This class reminds me of why I like anonymous inner classes.
 
@@ -61,7 +60,7 @@ public class StandardIntegerComparator
   /**
    * The one copy.
    */
-  public static StandardIntegerComparator comparator =
+  public static final StandardIntegerComparator COMPARATOR =
       new StandardIntegerComparator();
 
   // +--------------+----------------------------------------------------

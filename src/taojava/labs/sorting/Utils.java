@@ -69,12 +69,12 @@ class Utils
    *    merged is a permutation of the concatenation of the given 
    *    subarrays of a1 and a2.
    */
-  @SuppressWarnings({"unchecked"})
+  @SuppressWarnings({ "unchecked" })
   public static <T> T[] merge(Comparator<T> order, T[] a1, int lb1, int ub1,
                               T[] a2, int lb2, int ub2)
   {
     // Create the new array for the merged values.
-    T[] result = (T[]) new Object[(ub1-lb1) + (ub2-lb2)];
+    T[] result = (T[]) new Object[(ub1 - lb1) + (ub2 - lb2)];
     // STUB
     return result;
   } // merge(Comparator<T>, T[], int, int, T[], int, int)

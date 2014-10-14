@@ -7,12 +7,11 @@ import java.util.Comparator;
 
 /**
  * A variety of utilities to assist us in testing sorting routines.
-
+ *
  * @author Samuel A. Rebelsky
  */
 public class TestUtils
 {
-
   // +---------+---------------------------------------------------------
   // | Helpers |
   // +---------+
@@ -87,7 +86,7 @@ public class TestUtils
    */
   public static <T> void test1(Sorter<Integer> sorter)
   {
-    testAllPermutations(sorter, StandardIntegerComparator.comparator,
+    testAllPermutations(sorter, StandardIntegerComparator.COMPARATOR,
                         new Integer[] { 0, 1, 1, 2, 4, 7, 9, 11, 13, 13 });
   } // test1
 
@@ -98,7 +97,7 @@ public class TestUtils
   {
     for (int i = 1; i < 20; i++)
       {
-        testOnePermutation(sorter, StandardIntegerComparator.comparator,
+        testOnePermutation(sorter, StandardIntegerComparator.COMPARATOR,
                            Utils.randomSortedInts(i * 20));
       }
   } // test2(Sorter<Integer>)

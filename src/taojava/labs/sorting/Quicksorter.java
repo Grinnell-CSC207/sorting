@@ -10,8 +10,7 @@ import java.util.Comparator;
  * @author Your Name Here.
  */
 public class Quicksorter<T>
-    extends
-      SorterBridge<T>
+    extends SorterBridge<T>
 {
   /**
    * Sort vals using Quicksort.  See the Sorter<T> interface

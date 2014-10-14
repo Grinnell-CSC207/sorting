@@ -21,8 +21,8 @@ public class ExptUtils
    * of the array, and a candidate sorted version of the array, determines
    * if the candidate is correct.  Also prints other useful log info.
    */
-  public static <T> void checkSorting(PrintWriter pen, T[] values, 
-                                      T[] sorted, T[] candidate)
+  public static <T> void checkSorting(PrintWriter pen, T[] values, T[] sorted,
+                                      T[] candidate)
   {
     // Print a quick prefix so that we can see whether or not the
     // sort worked.
@@ -47,10 +47,9 @@ public class ExptUtils
   /**
    * A simple experiment in permutations.
    */
-  public static <T> void permutationExperiment(PrintWriter pen, 
-                                               Sorter<T> sorter,
-                                               Comparator<T> compare, 
-                                               T[] sorted)
+  public static <T> void
+    permutationExperiment(PrintWriter pen, Sorter<T> sorter,
+                          Comparator<T> compare, T[] sorted)
   {
     T[] values = sorted.clone();
     Utils.permute(values);
@@ -73,23 +72,22 @@ public class ExptUtils
     // people sometimes screw up double values and an element at the end of
     // the array.)
     Integer[] vals2 = new Integer[] { 1, 1, 2, 3, 4, 5, 7, 9, 11, 13, 13, 0 };
-    checkSorting(pen,
-                 vals2,
-                 new Integer[] { 0, 1, 1, 2, 3, 4, 5, 7, 9, 11, 13, 13 },
-                 sorter.sort(vals2, StandardIntegerComparator.comparator));
+    checkSorting(pen, vals2, new Integer[] { 0, 1, 1, 2, 3, 4, 5, 7, 9, 11, 13,
+                                            13 },
+                 sorter.sort(vals2, StandardIntegerComparator.COMPARATOR));
 
     // Five random permutation experiments seems like enough.
     for (int i = 0; i < 5; i++)
       {
         permutationExperiment(pen, sorter,
-                              StandardIntegerComparator.comparator, vals1);
+                              StandardIntegerComparator.COMPARATOR, vals1);
       } // for
 
     // A permutation experiment with different sizes
     for (int i = 1; i < 5; i++)
       {
         permutationExperiment(pen, sorter,
-                              StandardIntegerComparator.comparator,
+                              StandardIntegerComparator.COMPARATOR,
                               Utils.randomSortedInts(i * 10));
       } // for
   } // experiments(Sorter<Integer>)
@@ -106,7 +104,7 @@ public class ExptUtils
     // Five random permutation experiments seems like enough
     for (int i = 0; i < 5; i++)
       {
-        permutationExperiment(pen, sorter, StandardStringComparator.comparator,
+        permutationExperiment(pen, sorter, StandardStringComparator.COMPARATOR,
                               vals1);
       } // for
   } // experiments(Sorter<String>)

@@ -10,8 +10,7 @@ import java.util.Comparator;
  * @author Your Name Here.
  */
 public class MergeSorter<T>
-    extends
-      SorterBridge<T>
+    extends SorterBridge<T>
 {
   /**
    * Sort vals using iterative merge sort. See the Sorter<T> interface for

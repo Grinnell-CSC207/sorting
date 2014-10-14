@@ -14,10 +14,8 @@ import java.util.Comparator;
  * @author Samuel A. Rebelsky
  */
 public class SorterBridge<T>
-    implements
-      Sorter<T>
+    implements Sorter<T>
 {
-
   @Override
   public T[] sorti(T[] vals, Comparator<T> order)
   {

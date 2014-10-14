@@ -9,8 +9,7 @@ import java.util.Comparator;
  * @author Samuel A. Rebelsky
  */
 public class BuiltinSorter<T>
-    extends
-      SorterBridge<T>
+    extends SorterBridge<T>
 {
 
   @Override

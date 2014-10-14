@@ -10,13 +10,12 @@ import java.util.Comparator;
  * @author Samuel A. Rebelsky
  */
 public class StandardStringComparator
-    implements
-      Comparator<String>
+    implements Comparator<String>
 {
   /**
    * The one copy.
    */
-  public static StandardStringComparator comparator =
+  public static StandardStringComparator COMPARATOR =
       new StandardStringComparator();
 
   /**
