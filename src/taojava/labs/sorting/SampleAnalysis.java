@@ -27,7 +27,7 @@ public class SampleAnalysis
                                                       SorterAnalyzer.increasingIntArrBuilder };
     String[] builderNames = { "Random", "Increasing" };
 
-    SorterAnalyzer.multipleAnalysis(pen, sorters, sorterNames,
+    SorterAnalyzer.combinedAnalysis(pen, sorters, sorterNames,
                                     SorterAnalyzer.standardIntComparator,
                                     builders, builderNames);
   } // main(String[]
