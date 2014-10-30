@@ -16,8 +16,9 @@ public class SampleAnalysis
     PrintWriter pen = new PrintWriter(System.out, true);
     @SuppressWarnings("unchecked")
     Sorter<Integer>[] sorters =
-        (Sorter<Integer>[]) new Sorter[] { new BuiltinSorter<Integer>() };
-    String[] sorterNames = { "Built-in" };
+        (Sorter<Integer>[]) new Sorter[] { new BuiltinSorter<Integer>(),
+                                          new InsertionSorter<Integer>() };
+    String[] sorterNames = { "Built-in", "InsertionA" };
 
     @SuppressWarnings("unchecked")
     ArrayBuilder<Integer>[] builders =
