@@ -9,8 +9,7 @@ import java.util.Comparator;
  * @author Samuel A. Rebelsky
  */
 public class InsertionSorter<T>
-    extends
-      SorterBridge<T>
+    extends SorterBridge<T>
 {
   /**
    * Sort vals using insertion sort. See the Sorter<T> interface for additional
