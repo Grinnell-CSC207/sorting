@@ -48,6 +48,28 @@ class Utils
   } // merge(Comparator<T>, T[], T[])
 
   /**
+   * Merge the values in arrays a1 and a2 into an existing array.
+   * @return
+   *    merged, an array
+   *
+   * @pre
+   *    sorted(a1, order)
+   * @pre
+   *    sorted(a2, order)
+   * @pre
+   *    merged.length >= a1.length + a2.length
+   * @post
+   *    sorted(merged, order).
+   * @post
+   *    merged is a permutation of the concatenation of a1 and a2.
+   */
+  public static <T> T[] merge(Comparator<T> order, T[] a1, T[] a2, T[] merged)
+  {
+    return merge(order, a1, 0, a1.length, a2, 0, a2.length, merged, 0,
+                 a1.length + a2.length);
+  } // merge(Comparator<T>, T{], T[], T[])
+
+  /**
    * Merge the values in subarrays of a1 and a2 into a new array.
    * The subarray of a1 takes on indices lb1 (inclusive) to ub1 (exclusive).
    * The subarray of a2 takes on indices lb2 (inclusive) to ub2 (exclusive).
@@ -75,8 +97,45 @@ class Utils
   {
     // Create the new array for the merged values.
     T[] result = (T[]) new Object[(ub1 - lb1) + (ub2 - lb2)];
+    // And merge
+    return merge(order, a1, lb1, ub1, a2, lb2, ub2, result, 0, result.length);
+  } // merge(Comparator<T>, T[], int, int, T[], int, int)
+
+  /**
+   * Merge the values in subarrays of a1 and a2 into a subarray of an
+   *   existing array.
+   * The subarray of a1 takes on indices lb1 (inclusive) to ub1 (exclusive).
+   * The subarray of a2 takes on indices lb2 (inclusive) to ub2 (exclusive).
+   * The subarray of merged takes on indices lbm (inclusive) to 
+   *   ubm (exclusive).
+   *
+   * @return
+   *    merged, an array
+   *
+   * @pre
+   *    0 <= lb1 <= ub1 <= a1.length.
+   * @pre
+   *    0 <= lb2 <= ub2 <= a2.length.
+   * @pre
+   *    0 <= lbm <= ubm <= merged.length
+   * @pre
+   *    (ub1 - lb1) + (ub2 - lb2) = (ubm - lbm)
+   * @pre
+   *    sorted(a1, order, lb1, ub1).
+   * @pre
+   *    sorted(a2, order, lb2, ub2).
+   * @post
+   *    sorted(merged, order, lbm, ubm).
+   * @post
+   *    The subarray of merged is a permutation of the concatenation 
+   *    of the given subarrays of a1 and a2.
+   */
+  public static <T> T[] merge(Comparator<T> order, T[] a1, int lb1, int ub1,
+                              T[] a2, int lb2, int ub2, T[] merged, int lbm,
+                              int ubm)
+  {
     // STUB
-    return result;
+    return merged;
   } // merge(Comparator<T>, T[], int, int, T[], int, int)
 
   /**
