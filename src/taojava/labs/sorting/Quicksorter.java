@@ -42,7 +42,7 @@ public class Quicksorter<T>
   } // qsort(T[], Comparator<T>, int, int)
 
   /**
-   * Pick a random pivot and reorganize the elements in positions 
+   * Pick an appropriate pivot and reorganize the elements in positions 
    * [lb..ub) of vals such that elements smaller than the pivot appear
    * to the left, elements bigger than the pivot appear to the right
    * of the pivot, and the pivot is in the middle.  
