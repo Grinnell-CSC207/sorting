@@ -146,7 +146,7 @@ public class SorterAnalyzer
    * @param builderNames
    *    The names of those builders
    */
-  public static <T> void multipleAnalysis(PrintWriter pen, Sorter<T>[] sorters,
+  public static <T> void combinedAnalysis(PrintWriter pen, Sorter<T>[] sorters,
                                           String[] sorterNames,
                                           Comparator<T> order,
                                           ArrayBuilder<T> builders[],
@@ -167,7 +167,7 @@ public class SorterAnalyzer
                        builderNames[b], size, stats[0]);
           } // for size
       } // for builder : builders
-  } // multipleAnalysis(PrintWRiter, Sorter<T>, String[], ...)
+  } // combinedAnalysis(PrintWRiter, Sorter<T>, String[], ...)
 
   /**
    * Force garbage collection to the best of our ability.
