@@ -78,6 +78,7 @@ public class SorterAnalyzer
   // +---------------+---------------------------------------------------
   // | Class Methods |
   // +---------------+
+
   /**
    * Determine the amount of time sorter takes to sort an array of
    * the given size created by builder.
@@ -90,6 +91,9 @@ public class SorterAnalyzer
    *   The comparator we use in sorting.
    * @param size
    *   The size of the array that we sort.
+   *   
+   * @return the number of milliseconds that sorting took, or 
+   *   Long.MAX_VALUE if the sorter breaks.
    */
   public static <T> long basicAnalysis(Sorter<T> sorter, Comparator<T> order,
                                        ArrayBuilder<T> builder, int size)
@@ -109,7 +113,16 @@ public class SorterAnalyzer
     timer.start();
 
     // Do the real work.
-    sorter.sort(values, order);
+    try
+      {
+        sorter.sort(values, order);
+      } // try            
+    catch (Throwable error)
+      {
+        // Sorting failed with some error.  Return -1 to
+        // indicate failure.
+        return Long.MAX_VALUE;
+      } // catch
 
     // Stop the timer.
     timer.pause();
