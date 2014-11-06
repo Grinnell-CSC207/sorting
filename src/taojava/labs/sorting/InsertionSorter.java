@@ -26,7 +26,7 @@ public class InsertionSorter<T>
   } // sorti(T[], Comparator<T>)
 
   /**
-   * Insert the value in position i into the sorted subarray in positions
+   * Insert the value in position n into the sorted subarray in positions
    * 0..(n-1).
    * 
    * @param values
@@ -37,9 +37,9 @@ public class InsertionSorter<T>
    *   the bound on the end of the subarray.
    * 
    * @pre 0 <= n < values.length
-   * @pre Utils.sorted(values, order, 0, n).
+   * @pre Utils.sorted(values, order, 0, n-1).
    * @pre order can be compared to any pair of values in values.
-   * @post Utils.sorted(values, order, 0, n-1)
+   * @post Utils.sorted(values, order, 0, n)
    * @post No elements have been added or removed.
    */
   void insert(T[] vals, Comparator<T> order, int n)
